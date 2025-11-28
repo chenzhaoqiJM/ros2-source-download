@@ -1,0 +1,3 @@
+[submodule "rosdistro"]
+	path = rosdistro
+	url = https://github.com/ros/rosdistro.git

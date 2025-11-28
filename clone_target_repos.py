@@ -54,20 +54,26 @@ def clone_repositories():
     print(f"共发现 {len(repositories)} 个仓库定义。")
     print("-" * 40)
 
+    skip_name_list = []
+    err_name_list = []
     # 4. 遍历并下载
     for target_name in target_set:
         # --- 检查是否在列表中 ---
         repo_info = repositories.get(target_name)
 
         if not repo_info:
-            print(f"[跳过] {target_name} (不在目标列表中)")
+            ps = f"[跳过] {target_name} (不在目标列表中)"
+            print(ps)
+            skip_name_list.append(target_name+":"+ps)
             continue
 
         repo_name = target_name
         # --- 获取 Source 信息 ---
         source_info = repo_info.get('source')
         if not source_info:
-            print(f"[警告] {repo_name} 没有 source 字段，跳过。")
+            ps = f"[警告] {repo_name} 没有 source 字段，跳过。"
+            print(ps)
+            skip_name_list.append(repo_name+":"+ps)
             continue
 
         url = source_info.get('url')
@@ -75,7 +81,9 @@ def clone_repositories():
         type_ = source_info.get('type', 'git')
 
         if type_ != 'git':
-            print(f"[跳过] {repo_name} 类型不是 git ({type_})")
+            ps = f"[跳过] {repo_name} 类型不是 git ({type_})"
+            print(ps)
+            skip_name_list.append(repo_name+":"+ps)
             continue
 
         # --- 构建 git 命令 ---
@@ -83,7 +91,9 @@ def clone_repositories():
         repo_dest = os.path.join(TARGET_DIR, repo_name)
 
         if os.path.exists(repo_dest):
-            print(f"[跳过] {repo_name} 文件夹已存在")
+            ps = f"[跳过] {repo_name} 文件夹已存在"
+            print(ps)
+            skip_name_list.append(repo_name+":"+ps)
             continue
 
         print(f"[正在下载] {repo_name} -> 分支: {version}")
@@ -98,13 +108,23 @@ def clone_repositories():
         try:
             subprocess.run(cmd, check=True)
         except subprocess.CalledProcessError:
-            print(f"[失败] 克隆 {repo_name} 失败，请检查网络或分支名称。")
+            ps = f"[失败] 克隆 {repo_name} 失败，请检查网络或分支名称。"
+            print(ps)
+            err_name_list.append(repo_name+":"+ps)
         except Exception as e:
-            print(f"[错误] 发生未知错误: {e}")
+            ps = f"[错误] 发生未知错误: {e}"
+            print(ps)
+            err_name_list.append(repo_name+":"+ps)
 
 
     print("-" * 40)
-    print("所有任务完成。")
+    print("跳过列表-----------------------------")
+    print(skip_name_list)
+
+    print('\n\n')
+
+    print('失败列表------------------------------')
+    print(err_name_list)
 
 if __name__ == "__main__":
     clone_repositories()

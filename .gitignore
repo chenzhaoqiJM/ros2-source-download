@@ -1,0 +1,96 @@
+# 源码包
+kilted_src/
+jazzy_src/
+humble_src/
+
+# --- Python 编译文件 ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- C 扩展编译产物 ---
+*.so
+*.pyd
+*.dll
+
+# --- 虚拟环境 ---
+venv/
+.env/
+.venv/
+env/
+ENV/
+
+# --- 分发和打包 ---
+build/
+dist/
+sdist/
+wheels/
+*.egg-info/
+*.egg
+.eggs/
+MANIFEST
+
+# --- pip wheel 缓存 ---
+pip-wheel-metadata/
+*.whl
+
+# --- pytest/coverage ---
+.pytest_cache/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# --- mypy / pyright / lint ---
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+pyrightcache/
+
+# --- IDE/编辑器 ---
+# VS Code
+.vscode/
+# PyCharm
+.idea/
+
+# --- Jupyter Notebook ---
+.ipynb_checkpoints
+
+# --- 日志和运行时文件 ---
+*.log
+*.out
+*.pid
+*.tar.gz
+
+# --- Django/Flask 等 Web 框架 ---
+*.sqlite3
+instance/
+.app/
+
+# --- tox ---
+.tox/
+.tox/*
+.nox/
+.nox/*
+
+# --- Sphinx docs ---
+docs/_build/
+site/
+
+# --- 环境变量文件 ---
+*.env
+*.env.*
+
+# --- 持久缓存 ---
+*.mo
+*.pot
+__pypackages__/
+
+# --- Local history / backup ---
+*.swp
+*.swo
+*~

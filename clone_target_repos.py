@@ -2,13 +2,14 @@ import yaml
 import os
 import subprocess
 import sys
+script_dir = os.path.dirname(os.path.abspath(__file__))
 
-sub_dir = './kilted'
+sub_dir = 'kilted'
 
 # --- 配置区域 ---
-YAML_FILE = os.path.join(sub_dir, 'distribution.yaml')   # 你的ROS分布文件名
-TARGET_FILE = os.path.join(sub_dir, 'target_list.txt')   # 指定要下载的包名列表文件
-TARGET_DIR = 'src'                # 下载的目标文件夹
+YAML_FILE = os.path.join(script_dir, 'rosdistro', sub_dir, 'distribution.yaml')   # 你的ROS分布文件名
+TARGET_FILE = os.path.join(script_dir, sub_dir, 'target_list.txt')   # 指定要下载的包名列表文件
+TARGET_DIR = sub_dir + '_src'                # 下载的目标文件夹
 # ----------------
 
 def load_target_list(filename):

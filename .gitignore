@@ -2,6 +2,7 @@
 kilted_src/
 jazzy_src/
 humble_src/
+*.tar.gz
 
 # --- Python 编译文件 ---
 __pycache__/

@@ -1,16 +1,4 @@
 ros-humble-ament-package
-ros-humble-ros-gzgarden
-ros-humble-ros-gzgarden-bridge
-ros-humble-ros-gzgarden-image
-ros-humble-ros-gzgarden-interfaces
-ros-humble-ros-gzgarden-sim
-ros-humble-ros-gzgarden-sim-demos
-ros-humble-ros-gzharmonic
-ros-humble-ros-gzharmonic-bridge
-ros-humble-ros-gzharmonic-image
-ros-humble-ros-gzharmonic-interfaces
-ros-humble-ros-gzharmonic-sim
-ros-humble-ros-gzharmonic-sim-demos
 ---
 ros-humble-ament-cmake-core
 ---
@@ -1101,6 +1089,8 @@ ros-humble-rmw-fastrtps-dynamic-cpp
 ros-humble-rmw-stats-shim
 ros-humble-ros-babel-fish-test-msgs
 ros-humble-ros-gz-interfaces
+ros-humble-ros-gzgarden-interfaces
+ros-humble-ros-gzharmonic-interfaces
 ros-humble-ros2cli
 ros-humble-rosbridge-test-msgs
 ros-humble-rosidl-runtime-py
@@ -1330,6 +1320,8 @@ ros-humble-rmf-building-sim-common
 ros-humble-rmf-traffic-ros2
 ros-humble-rmf-websocket
 ros-humble-ros-gz-sim
+ros-humble-ros-gzgarden-sim
+ros-humble-ros-gzharmonic-sim
 ros-humble-ros2-fmt-logger
 ros-humble-ros2action
 ros-humble-rosbag2-test-common
@@ -1487,6 +1479,8 @@ ros-humble-rmf-visualization-obstacles
 ros-humble-rmf-visualization-schedule
 ros-humble-ros-babel-fish
 ros-humble-ros-gz-bridge
+ros-humble-ros-gzgarden-bridge
+ros-humble-ros-gzharmonic-bridge
 ros-humble-ros-ign-gazebo
 ros-humble-ros2-controllers-test-nodes
 ros-humble-ros2-socketcan
@@ -1668,6 +1662,8 @@ ros-humble-robot-controllers-interface
 ros-humble-robot-state-publisher
 ros-humble-robotiq-controllers
 ros-humble-ros-gz-image
+ros-humble-ros-gzgarden-image
+ros-humble-ros-gzharmonic-image
 ros-humble-ros2bag
 ros-humble-ros2launch-security-examples
 ros-humble-rosbag2-cpp
@@ -1985,6 +1981,8 @@ ros-humble-opennav-docking-core
 ros-humble-plansys2-planner
 ros-humble-plansys2-tools
 ros-humble-position-controllers
+ros-humble-ros-gzgarden-sim-demos
+ros-humble-ros-gzharmonic-sim-demos
 ros-humble-rosbag2-tests
 ros-humble-rosbag2-transport
 ros-humble-rtabmap-odom
@@ -2039,6 +2037,8 @@ ros-humble-plotjuggler-ros
 ros-humble-polygon-demos
 ros-humble-raspimouse-description
 ros-humble-rmf-visualization-rviz2-plugins
+ros-humble-ros-gzgarden
+ros-humble-ros-gzharmonic
 ros-humble-rosbag2
 ros-humble-rosbag2-py
 ros-humble-rtabmap-rviz-plugins

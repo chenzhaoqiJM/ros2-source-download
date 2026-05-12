@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import os
 import re
 import subprocess
 import sys
@@ -161,9 +162,11 @@ def build_dependency_layers(packages, deps_map):
 
 def main():
     distro = get_distro_name()
-    package_file = f'ros_{distro}_packages.txt'
-    sorted_output_file = f'sorted_packages_{distro}.txt'
-    layers_output_file = f'dependency_layers_{distro}.txt'
+    output_dir = os.path.join(os.path.dirname(__file__), distro)
+    os.makedirs(output_dir, exist_ok=True)
+    package_file = os.path.join(output_dir, f'ros_{distro}_packages.txt')
+    sorted_output_file = os.path.join(output_dir, f'sorted_packages_{distro}.txt')
+    layers_output_file = os.path.join(output_dir, f'dependency_layers_{distro}.txt')
 
     # 读取包列表
     with open(package_file, 'r') as f:

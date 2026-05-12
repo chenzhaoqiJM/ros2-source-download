@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import os
 import subprocess
 import sys
 
@@ -32,7 +33,9 @@ def get_packages(distro):
 
         packages.sort()
 
-        output_file = f'ros_{distro}_packages.txt'
+        output_dir = os.path.join(os.path.dirname(__file__), distro)
+        os.makedirs(output_dir, exist_ok=True)
+        output_file = os.path.join(output_dir, f'ros_{distro}_packages.txt')
         with open(output_file, 'w') as f:
             for pkg in packages:
                 f.write(pkg + '\n')
